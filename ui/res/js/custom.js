@@ -12,6 +12,24 @@ var close2 = document.getElementsByClassName("close")[1];
 
 var modal = document.getElementsByClassName("modal");
 
+
+
+
+function openCity(evt, tabId) {
+  var tabcontent;
+
+    tabcontent = document.getElementsByClassName("tab-pane");
+
+
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    document.getElementById(tabId).style.display = "block";
+
+
+}
+
 //add event listener
 signUpBtn.addEventListener('click', function(event){
   //window.location.href='Students.html';
