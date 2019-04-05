@@ -1,6 +1,21 @@
 import dummyData from '../utils/dummyData';
 import Account from '../models/account.model';
+import User from '../models/user.model';
 const UserService = {
+
+    getTransactionHistory(id){
+
+        
+        const account = dummyData.account.find(account => account.id == id);        
+        const accountNumber = account.accountNumber;
+        const accountHistory = dummyData.transaction.filter(transaction => transaction.accountNumber == accountNumber);
+        if(accountHistory !== undefined){
+            return accountHistory;
+        }else{
+            return 'Not Transaction History Found';
+        }
+
+    },
 
     fetchAccountById(id){
         const account = dummyData.account.find(account => account.id == id);

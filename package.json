@@ -40,6 +40,7 @@
     "chai-http": "^4.2.1",
     "codeclimate-test-reporter": "^0.5.1",
     "coveralls": "^3.0.3",
+    "debug": "^4.1.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "morgan": "^1.9.1",
