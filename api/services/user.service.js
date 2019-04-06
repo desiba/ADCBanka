@@ -3,6 +3,12 @@ import Account from '../models/account.model';
 import User from '../models/user.model';
 const UserService = {
 
+    debitAccount(accountNumber){
+        const account = dummyData.account.find(account => account.accountNumber == accountNumber);
+        return account;
+
+    },
+
     getTransactionHistory(id){
 
         

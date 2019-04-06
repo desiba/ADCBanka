@@ -2,12 +2,34 @@ import UserService from '../services/user.service';
 
 const UserController = {
 
+  debitAccount(req, res){
+    const {accountnumber} = req.params;
+    const debitamount = req.body.amount;
+    const accountFound = UserService.debitAccount(accountnumber);
+    if(accountFound === undefined){
+       return res.status(404).json({status: 404, data: 'account not found'});
+    }else{
+    
+    const currentBalance = accountFound.balance;
+    if(debitamount > currentBalance){
+      return res.status(401).json({status: 401, data: 'insufficient balance'});
+    }else{
+      const newBalance = currentBalance - debitamount;
+      //update the account balance
+      accountFound['balance'] = newBalance;
+      return res.status(200).json({status: 'success', data: accountFound});
+
+    }
+  }
+    
+  },
+
   getTransactionHistory(req, res){
      const {id} = req.params;
      const foundAccHistory = UserService.getTransactionHistory(id);
      //console.log(foundAccHistory);
      if(foundAccHistory){
-          return res.status(200).json({status: 'success', data: foundAccHistory});
+          return res.status(200).json({status: 200, data: foundAccHistory});
      }else{
           return res.status(404).json({status: 'not found'});
      }
