@@ -3,6 +3,11 @@ import Account from '../models/account.model';
 import User from '../models/user.model';
 const UserService = {
 
+    creditAccount(accountNumber){
+        const account = dummyData.account.find(account => account.accountNumber == accountNumber);
+        return account;
+    },
+
     debitAccount(accountNumber){
         const account = dummyData.account.find(account => account.accountNumber == accountNumber);
         return account;
