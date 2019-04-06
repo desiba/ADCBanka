@@ -2,6 +2,14 @@ import UserService from '../services/user.service';
 
 const UserController = {
 
+  deleteAccount(req, res){
+    const {accountnumber} = req.params;
+    const deletedAccount = UserService.deleteAccount(accountnumber);
+    return  res.status(200).json({status: 200, data: deletedAccount});
+  },
+
+  
+
   creditAccount(req, res){
     const {accountnumber} = req.params;
     const creditamount = req.body.amount;

@@ -3,6 +3,19 @@ import Account from '../models/account.model';
 import User from '../models/user.model';
 const UserService = {
 
+    deleteAccount(accountnumber){
+      
+      const getAccountIndex = dummyData.account.findIndex(account => account.accountNumber == accountnumber);
+      if(getAccountIndex >= 0){
+          //const delAccount = dummyData.account[getAccountIndex];
+          const newAccounts = dummyData.account.filter(account => account.accountNumber != accountnumber);
+          dummyData.account = newAccounts;
+          return newAccounts;
+        }
+      
+      
+    },
+
     creditAccount(accountNumber){
         const account = dummyData.account.find(account => account.accountNumber == accountNumber);
         return account;
