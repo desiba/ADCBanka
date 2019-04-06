@@ -2,6 +2,24 @@ import UserService from '../services/user.service';
 
 const UserController = {
 
+  creditAccount(req, res){
+    const {accountnumber} = req.params;
+    const creditamount = req.body.amount;
+    const accountFound = UserService.creditAccount(accountnumber);
+    if(accountFound === undefined){
+      return res.status(404).json({status: 404, data: 'account not found'});
+   }else{
+       const currentBalance =  accountFound.balance;
+
+      if(creditamount >= 0.0){
+         const newBalance =  creditamount + currentBalance;
+         //update the account balance of the user
+         accountFound['balance'] = newBalance;
+         return res.status(200).json({status: 200, data: accountFound});
+      }
+   }
+  },
+
   debitAccount(req, res){
     const {accountnumber} = req.params;
     const debitamount = req.body.amount;
