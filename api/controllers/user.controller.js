@@ -2,6 +2,18 @@ import UserService from '../services/user.service';
 
 const UserController = {
 
+  userSignIn(req, res){
+    const email = req.body.email;
+    const user = UserService.userSignIn(email);
+    if(user == undefined){
+      return  res.status(200).json({status: 200, data: user});
+
+    }else{
+      return  res.status(404).json({status: 404, data: "not found"});
+
+    }
+  },
+
   deleteAccount(req, res){
     const {accountnumber} = req.params;
     const deletedAccount = UserService.deleteAccount(accountnumber);

@@ -9,6 +9,7 @@ router.get('/transaction/:id', UserController.getTransactionHistory);
 router.post('/transaction/:accountnumber/debit', UserController.debitAccount);
 router.post('/transaction/:accountnumber/credit', UserController.creditAccount);
 router.delete('/:accountnumber', UserController.deleteAccount);
+router.post('/auth/signin', UserController.userSignIn);
 
 
 
