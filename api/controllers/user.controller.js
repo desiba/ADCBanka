@@ -2,6 +2,28 @@ import UserService from '../services/user.service';
 
 const UserController = {
 
+  /**
+   * 
+   * @param {object} req 
+   * @param {object} res 
+   * @returns {object} UserController array
+   */
+
+  activateAccount(req, res){
+
+    const accountnumber = req.params.accountnumber;
+
+    const status = req.body.status;
+
+    const account = UserService.activateAccount(accountnumber, status);
+     
+    if(account != null){
+      return  res.status(200).json({status: 200, data: account});
+    }else{
+      return  res.status(404).json({status: 404, data: "account not found"});
+    }
+  },
+
   userSignIn(req, res){
     const email = req.body.email;
     const user = UserService.userSignIn(email);

@@ -9,6 +9,37 @@ const secretKey = process.env.JWT_SECRET;
 
 const UserService = {
 
+    /**
+     * This is a function.
+     *
+     * @param {integer} n - A string param
+     * @return {json} A good string
+     *
+     * @example
+     *
+     *     foo(546463, 'dormant')
+     */
+
+    activateAccount(accountnum, value){
+        const accountIndex = dummyData.account.findIndex(account => account.accountNumber == accountnum);
+        
+        if(accountIndex >= 0){
+            dummyData.account[accountIndex]['status'] = value;
+
+            const updated = dummyData.account[accountIndex];
+
+            
+            return updated;
+
+
+
+        }else{
+            return null;
+        }
+        
+
+    },
+
     userSignIn(login){
         const user = dummyData.user.find(user => user.email == login);
         
