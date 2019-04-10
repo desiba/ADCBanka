@@ -2,7 +2,20 @@ import UserService from '../services/user.service';
 
 class UserController {
 
-  
+  static getSingleUser(req, res){
+    const id = req.params.userId;
+    const user = UserService.getSingleUser(id);
+    if(user != null){
+      return  res.status(200).json({status: 200, data: user});
+    }
+    return  res.status(404).json({status: 404, data: "not found"});
+  }
+
+  static getAllUsers(req, res){
+    const users = UserService.getAllUsers();
+
+      return  res.status(200).json({status: 200, data: users});
+  }
 
   static userSignUp(req, res){
     const user = UserService.signUpUser(req.body);
