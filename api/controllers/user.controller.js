@@ -1,6 +1,18 @@
 import UserService from '../services/user.service';
 
-const UserController = {
+class UserController {
+
+  
+
+  static userSignUp(req, res){
+    const user = UserService.signUpUser(req.body);
+    
+    if(user != null){
+      return  res.status(200).json({status: 200, data: user});
+    }else{
+      return  res.status(404).json({status: 404, data: "email already exist"});
+    }
+  }
 
   /**
    * 
@@ -9,7 +21,7 @@ const UserController = {
    * @returns {object} UserController array
    */
 
-  activateAccount(req, res){
+  static activateAccount(req, res){
 
     const accountnumber = req.params.accountnumber;
 
@@ -22,29 +34,30 @@ const UserController = {
     }else{
       return  res.status(404).json({status: 404, data: "account not found"});
     }
-  },
+  }
 
-  userSignIn(req, res){
+  static userSignIn(req, res){
     const email = req.body.email;
     const user = UserService.userSignIn(email);
-    if(user == undefined){
-      return  res.status(200).json({status: 200, data: user});
+    
+    if(user != undefined){
+        return  res.status(200).json({status: 200, data: user});
 
     }else{
-      return  res.status(404).json({status: 404, data: "not found"});
+        return  res.status(404).json({status: 404, data: "not found"});
 
     }
-  },
+  }
 
-  deleteAccount(req, res){
+  static deleteAccount(req, res){
     const {accountnumber} = req.params;
     const deletedAccount = UserService.deleteAccount(accountnumber);
     return  res.status(200).json({status: 200, data: deletedAccount});
-  },
+  }
 
   
 
-  creditAccount(req, res){
+  static creditAccount(req, res){
     const {accountnumber} = req.params;
     const creditamount = req.body.amount;
     const accountFound = UserService.creditAccount(accountnumber);
@@ -60,9 +73,9 @@ const UserController = {
          return res.status(200).json({status: 200, data: accountFound});
       }
    }
-  },
+  }
 
-  debitAccount(req, res){
+  static debitAccount(req, res){
     const {accountnumber} = req.params;
     const debitamount = req.body.amount;
     const accountFound = UserService.debitAccount(accountnumber);
@@ -82,20 +95,20 @@ const UserController = {
     }
   }
     
-  },
+  }
 
-  getTransactionHistory(req, res){
+  static getTransactionHistory(req, res){
      const {id} = req.params;
      const foundAccHistory = UserService.getTransactionHistory(id);
-     //console.log(foundAccHistory);
+     
      if(foundAccHistory){
           return res.status(200).json({status: 200, data: foundAccHistory});
      }else{
           return res.status(404).json({status: 'not found'});
      }
-  },
+  }
 
-  fetchAccountById(req, res){
+  static fetchAccountById(req, res){
     const {id} = req.params;
 
     const foundAccount = UserService.fetchAccountById(id);
@@ -108,19 +121,19 @@ const UserController = {
       return res.status(404).json({status: 'not found'});
     }
 
-  },
+  }
 
-  createAccount(req, res){
+  static createAccount(req, res){
       const newAccount = req.body;
       const createdAccount = UserService.createAccount(newAccount);
       return res.status(200).json({
         status: 'success',
         data: createdAccount
     })
-  },
+  }
   
 
     
-};
+}
 
 export default UserController;
