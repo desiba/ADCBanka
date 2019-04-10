@@ -4,7 +4,7 @@ const Validator = {};
 
 
 Validator.signup = (req, res, next) => {
-    req.checkBody('email', 'please supply a valid email').notEmpty().isEmailV2();
+    req.checkBody('email', 'please supply a vali email').notEmpty().isEmailV2();
     req.checkBody('firstname', 'Please enter a valid firstName').notEmpty().isHumanName();
     req.checkBody('lastname', 'Please supply a valid lastName').notEmpty().isHumanName();
     req.checkBody('password', 'Please supply a valid password').isMinLen(6).isMaxLen(50);

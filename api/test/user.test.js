@@ -1,8 +1,10 @@
-import {expect} from 'chai';
-import request from 'supertest';
+import chaiHttp from 'chai-http';
+import chai, { expect } from 'chai';
 import app from '../index';
 
-describe('User', () => {
+chai.use(chaiHttp);
+
+describe('Test User Controller', () => {
 
 
     const user = {
@@ -15,43 +17,46 @@ describe('User', () => {
             isAdmin: false
         },
 
-        user403: {
-            email: "abs@aol.com",
-            firstname: "femi",
-            lastname: "jinadu",
-            password: "wisdom",
-            type: "savings",
-            isAdmin: false
-        }
     }
 
 
     describe('#POST /user', () => {
         it('this is to test user signup api', (done) => {
-            request(app)
-            .post('/api/v1/user/signup')
+            chai.request(app)
+            .post('/api/v1/user/auth/signup')
             .send(user.user)
             .end((err, res) => {
                 expect(res.body).to.be.an('object');
-                expect(res.body.code).to.equal(200);
-                expect(res.body.status).to.equal('success');
+                expect(res).to.have.status(200);
+                expect(res.body.status).to.equal(200);
+                expect(res.body.data).to.be.a('object');
+                expect(res.body.data).to.have.property('id');
+                expect(res.body.data).to.have.property('email');
+                expect(res.body.data).to.have.property('firstname');
+                expect(res.body.data).to.have.property('lastname');
+                expect(res.body.data).to.have.property('password');
+                expect(res.body.data).to.have.property('type');
+                expect(res.body.data).to.have.property('isAdmin');
+                expect(res.body.data.email).to.equal('paul@aol.com');
                 done();
-            })
-        })
-    })
+            });
+        },);
 
-
-    describe('#POST /user', () => {
-        it('this will not signup user with existed email', (done) => {
-            request(app)
-            .post('/api/v1/user/signup')
-            .send(user.user403)
+        it('this is to prevent signup if email is missing', (done) => {
+            chai.request(app)
+            .post('/api/v1/user/auth/signup')
+            .send(user.user)
             .end((err, res) => {
                 expect(res.body).to.be.an('object');
-                expect(res.body.code).to.equal(403);
-                expect(res.body.status).to.equal('failed');
+                expect(res.body.status).to.equal(404);
                 done();
-            })
-        })
+            });
+        },);
+
+        
+
     })
+
+
+    
 })
