@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec babel-node ./api/index.js",
-    "test": "set TEST_ENV=test && nyc --reporter=html --reporter=text mocha --require @babel/register ./api/test/*.js --exit"
+    "test": "set TEST_ENV=test && nyc --reporter=html --reporter=text mocha --require @babel/register ./api/test/*.js --exit",
+    "clean": "rimraf build && mkdir build",
+    "build-babel": "npm run clean && ./node_modules/.bin/babel ./api -d ./build/ --ignore ./api/coverage",
+    "build": "npm run build-babel",
+    "start": "node ./build/index.js"
   },
   "repository": {
     "type": "git",
