@@ -2,12 +2,60 @@ import dummyData from '../utils/dummyData';
 import Account from '../models/account.model';
 import User from '../models/user.model';
 import jwt from 'jsonwebtoken';
+import createToken from '../utils/create.token';
+import harshPassword from '../utils/hash.password';
+import uuid from 'node-uuid';
+import bcrypt from 'bcrypt';
+
 
 
 const secretKey = process.env.JWT_SECRET;
 
 
-const UserService = {
+
+
+class  UserService {
+
+
+    
+
+
+    static signUpUser(userinput){
+        //console.log(user.email);
+        const accountIndex = dummyData.user.findIndex(user => user.email == userinput.email);
+        if(accountIndex < 0){
+            userinput.isAdmin = userinput.isAdmin ? userinput.isAdmin : false;
+            const userLength = dummyData.user.length;
+            const lastId = dummyData.user[userLength - 1].id;
+            const newId = lastId + 1;
+            userinput.id = newId;
+
+            const hash = bcrypt.hashSync(userinput.password, 10);
+
+            const newUser = new User();
+                    newUser.id = userinput.id;
+                    newUser.email = userinput.email;
+                    newUser.firstname = userinput.firstname;
+                    newUser.lastname = userinput.lastname;
+                    newUser.password = hash;        
+                    newUser.type = userinput.type;
+                    newUser.isAdmin = userinput.isAdmin;
+                    dummyData.user.push(newUser);
+                    return newUser;
+            
+
+            
+
+           
+
+            
+            
+
+        }else{
+           return null;
+        }
+
+    }
 
     /**
      * This is a function.
@@ -20,7 +68,7 @@ const UserService = {
      *     foo(546463, 'dormant')
      */
 
-    activateAccount(accountnum, value){
+    static activateAccount(accountnum, value){
         const accountIndex = dummyData.account.findIndex(account => account.accountNumber == accountnum);
         
         if(accountIndex >= 0){
@@ -38,10 +86,16 @@ const UserService = {
         }
         
 
-    },
+    }
 
-    userSignIn(login){
+    static userSignIn(login){
         const user = dummyData.user.find(user => user.email == login);
+
+        
+        
+        //const matched = bcrypt.compareSync(login.password, user.password) ? true : false; 
+           // console.log(matched);
+           
         
         if(user != undefined){
             const payload = {
@@ -69,9 +123,9 @@ const UserService = {
         }
         
        
-    },
+    }
 
-    deleteAccount(accountnumber){
+   static deleteAccount(accountnumber){
       
       const getAccountIndex = dummyData.account.findIndex(account => account.accountNumber == accountnumber);
       if(getAccountIndex >= 0){
@@ -82,20 +136,20 @@ const UserService = {
         }
       
       
-    },
+    }
 
-    creditAccount(accountNumber){
+    static creditAccount(accountNumber){
         const account = dummyData.account.find(account => account.accountNumber == accountNumber);
         return account;
-    },
+    }
 
-    debitAccount(accountNumber){
+    static debitAccount(accountNumber){
         const account = dummyData.account.find(account => account.accountNumber == accountNumber);
         return account;
 
-    },
+    }
 
-    getTransactionHistory(id){
+    static getTransactionHistory(id){
 
         
         const account = dummyData.account.find(account => account.id == id);        
@@ -107,9 +161,9 @@ const UserService = {
             return 'Not Transaction History Found';
         }
 
-    },
+    }
 
-    fetchAccountById(id){
+    static fetchAccountById(id){
         const account = dummyData.account.find(account => account.id == id);
         if(account !== undefined){
             return account;
@@ -117,9 +171,9 @@ const UserService = {
             return 'Account Not Found';
         }
         //return account || { status: 'Not Found'};
-    },
+    }
 
-    createAccount(account){
+    static createAccount(account){
         const accountLength = dummyData.account.length;
         const lastId = dummyData.account[accountLength - 1].id;
         const newId = lastId + 1;
@@ -134,13 +188,13 @@ const UserService = {
         newAccount.balance = account.balance;
         dummyData.account.push(newAccount);
         return newAccount;
-    },
+    }
 
     
     
 
     
 
-};
+}
 
 export default UserService;
