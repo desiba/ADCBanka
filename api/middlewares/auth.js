@@ -15,7 +15,7 @@ JWT.verifyToken = (req, res, next) => {
 
 
     if(!token){
-        return res.status(403).json('No token provided');
+        return res.status(403).json('Please log in');
     }
 
     

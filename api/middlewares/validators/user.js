@@ -1,14 +1,18 @@
 import Transformer from '../../utils/transformer'
 const Validator = {};
 
-Validator.create = (req, res, next) => {
+
+
+Validator.signup = (req, res, next) => {
+    req.checkBody('email', 'please supply a valid email').notEmpty().isEmailV2();
     req.checkBody('firstname', 'Please enter a valid firstName').notEmpty().isHumanName();
     req.checkBody('lastname', 'Please supply a valid lastName').notEmpty().isHumanName();
-    req.checkBody('address', 'Please supply a valid lastName').notEmpty();//.isMinLen(6).isMaxLen(50);
-    req.checkBody('phonenumber', 'Please supply valid phoneNumber').notEmpty();//.isMinLen(10).isMaxLen(15);
-    req.checkBody('email', 'please supply a valid email').notEmpty().isEmailV2();
-    req.checkBody('password', 'Please supply a valid password');//.isMinLen(6).isMaxLen(50);
-    req.checkBody('roleId', 'Please supply a valid username').notEmpty();
+    req.checkBody('password', 'Please supply a valid password').isMinLen(6).isMaxLen(50);
+
+    //req.checkBody('address', 'Please supply a valid lastName').notEmpty();//.isMinLen(6).isMaxLen(50);
+
+    //req.checkBody('phonenumber', 'Please supply valid phoneNumber').notEmpty();//.isMinLen(10).isMaxLen(15);
+    //req.checkBody('roleId', 'Please supply a valid username').notEmpty();
     req.asyncValidationErrors()
     .then(next)
     .catch(errors => res.status(400).json(Transformer.transformResponse(400,
