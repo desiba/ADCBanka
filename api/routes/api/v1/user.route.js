@@ -8,6 +8,8 @@ import permission from '../../../middlewares/permissions/user.permission';
 
 const router = express.Router();
 
+router.post('/auth/signup',validator.signup,UserController.userSignUp);
+
 router.get('/users/:userId',jwtVerify.verifyToken, UserController.getSingleUser);
 router.get('/users/',jwtVerify.verifyToken,permission.canView, UserController.getAllUsers);
 router.post('/account/',jwtVerify.verifyToken, UserController.createAccount);
@@ -17,7 +19,7 @@ router.post('/transaction/:accountnumber/debit',jwtVerify.verifyToken, UserContr
 router.post('/transaction/:accountnumber/credit',jwtVerify.verifyToken, UserController.creditAccount);
 router.delete('/:accountnumber',jwtVerify.verifyToken, UserController.deleteAccount);
 router.post('/auth/signin',validator.login, UserController.userSignIn);
-router.post('/auth/signup',validator.signup,UserController.userSignUp);
+
 router.patch('/account/:accountnumber',jwtVerify.verifyToken, UserController.activateAccount);
 
 
