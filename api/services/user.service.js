@@ -9,26 +9,46 @@ import bcrypt from 'bcrypt';
 
 
 
+
 const secretKey = process.env.JWT_SECRET;
+
+
+
+
 
 
 
 
 class  UserService {
 
+    static getSingleUser(id){
+        
+        const user = dummyData.user.find(user => user.id === parseInt(id));
+        if(!user) return;
+        const {password, isAdmin, ...otherUserDetail} = user;
+        return otherUserDetail;
+    }
+
+    static getAllUsers(){
+      return dummyData.user.map(user => {
+          const {password,isAdmin, ...otherUserDetail} = user;
+          return otherUserDetail;
+      });
+    }
+
 
     
-
-
     static signUpUser(userinput){
         //console.log(user.email);
         const accountIndex = dummyData.user.findIndex(user => user.email == userinput.email);
         if(accountIndex < 0){
             userinput.isAdmin = userinput.isAdmin ? userinput.isAdmin : false;
+            
             const userLength = dummyData.user.length;
             const lastId = dummyData.user[userLength - 1].id;
             const newId = lastId + 1;
             userinput.id = newId;
+            
 
             const hash = bcrypt.hashSync(userinput.password, 10);
 
@@ -40,15 +60,9 @@ class  UserService {
                     newUser.password = hash;        
                     newUser.type = userinput.type;
                     newUser.isAdmin = userinput.isAdmin;
+                    
                     dummyData.user.push(newUser);
                     return newUser;
-            
-
-            
-
-           
-
-            
             
 
         }else{
@@ -75,17 +89,12 @@ class  UserService {
             dummyData.account[accountIndex]['status'] = value;
 
             const updated = dummyData.account[accountIndex];
-
-            
             return updated;
-
-
 
         }else{
             return null;
         }
         
-
     }
 
     static userSignIn(login){

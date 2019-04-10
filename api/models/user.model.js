@@ -6,7 +6,8 @@ class User{
         this.lastname = null,
         this.password = null,
         this.type = null,
-        this.isAdmin - null
+        this.isAdmin = null,
+        this.role = null
     }
 }
 export default User;

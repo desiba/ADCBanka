@@ -1,4 +1,12 @@
 export default{
+    Role: [
+        {
+            User: '',
+            Admin: ''
+        }
+    ],
+
+    
     account: [
           {
               id: 1,
@@ -28,6 +36,7 @@ export default{
             password: 'wisdom',
             type: 'client',
             isAdmin: false
+            
         },
         {
             id: 2,
@@ -37,6 +46,7 @@ export default{
             password: 'west',
             type: 'client',
             isAdmin: false
+            
         },
        
     ],
