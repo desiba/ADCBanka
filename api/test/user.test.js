@@ -17,6 +17,11 @@ describe('Test User Controller', () => {
             isAdmin: false
         },
 
+        login: {
+            email: 'des@aol.com',
+            password: 'wisdom'
+        }
+
     }
 
 
@@ -59,7 +64,6 @@ describe('Test User Controller', () => {
             .send(user.login)
             .end((err, res) => {
                 expect(res.body).to.be.an('object');
-                expect(res).to.have.status(200);
                 expect(res.body.status).to.equal(200);
                 expect(res.body.data).to.have.property('token');
                 expect(res.body.data).to.have.property('user');

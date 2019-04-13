@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">35.71% </span>
+        <span class="strong">85.71% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/14</span>
+        <span class='fraction'>12/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>3/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/3</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">38.46% </span>
+        <span class="strong">92.31% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/13</span>
+        <span class='fraction'>12/13</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -86,8 +86,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -107,23 +107,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const transformer = {},
   errCodes = [401, 403, 500, 400];
 &nbsp;
-transformer.transformResponse = <span class="fstat-no" title="function not covered" >(s</span>tatus, data) =&gt; {
-<span class="cstat-no" title="statement not covered" >  if (errCodes.includes(status)) {</span>
-<span class="cstat-no" title="statement not covered" >    return {</span>
+transformer.transformResponse = (status, data) =&gt; {
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (errCodes.includes(status)) {
+    return {
       status,
       error: data
     };
@@ -142,16 +142,16 @@ transformer.transformResponse = <span class="fstat-no" title="function not cover
  * with each message separated by '|'
  * @returns {json} transformed validation error
  */
-transformer.transformExpressValidationErrors = <span class="fstat-no" title="function not covered" >(e</span>rrors) =&gt; {
-  let msgs = <span class="cstat-no" title="statement not covered" >'';</span>
+transformer.transformExpressValidationErrors = (errors) =&gt; {
+  let msgs = '';
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!Array.isArray(errors)) <span class="cstat-no" title="statement not covered" >return m</span></span>sgs;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!Array.isArray(errors)) <span class="cstat-no" title="statement not covered" >return m</span>sgs;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  errors.</span>forEach(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; {
-<span class="cstat-no" title="statement not covered" >    msgs </span>+= ` ${(item.msg || '')} |`;
+  errors.forEach((item) =&gt; {
+    msgs += ` ${(item.msg || <span class="branch-1 cbranch-no" title="branch not covered" >'')} |`;</span>
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return m</span>sgs;
+  return msgs;
 };
 &nbsp;
 export default transformer;</pre></td></tr>
@@ -160,7 +160,7 @@ export default transformer;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Apr 10 2019 21:57:53 GMT+0100 (West Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Apr 13 2019 10:53:24 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>
