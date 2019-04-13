@@ -53,6 +53,26 @@ describe('Test User Controller', () => {
             });
         },);
 
+        it('this is to test user signin api', (done) => {
+            chai.request(app)
+            .post('/api/v1/user/auth/signin')
+            .send(user.login)
+            .end((err, res) => {
+                expect(res.body).to.be.an('object');
+                expect(res).to.have.status(200);
+                expect(res.body.status).to.equal(200);
+                expect(res.body.data).to.have.property('token');
+                expect(res.body.data).to.have.property('user');
+                expect(res.body.data.user).to.have.property('id');
+                expect(res.body.data.user).to.have.property('firstname');
+                expect(res.body.data.user).to.have.property('lastname');
+                expect(res.body.data.user).to.have.property('type');
+                expect(res.body.data.user).to.have.property('isAdmin');
+                expect(res.body.data.token).to.be.a('string');
+                done();
+            });
+        },);
+
         
 
     })
