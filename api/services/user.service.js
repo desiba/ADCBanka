@@ -116,13 +116,19 @@ class  UserService {
                 isAdmin: user.isAdmin
             };
 
+            
+
             const token = jwt.sign(payload, secretKey, {
                 expiresIn: 3600,
             });
+
+            
+            const {password, ...payloadDetail} = payload;
+
+
             const resp = {
-              code: 200,
               message: 'User successfully loggedIn',
-              user: payload,
+              user: payloadDetail,
               token: token,
             }
             return resp;

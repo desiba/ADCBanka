@@ -54,7 +54,7 @@ class UserController {
     const user = UserService.userSignIn(email);
     
     if(user != undefined){
-        return  res.status(200).json({status: 200, data: user});
+        return  res.status(200).json({status: 200, data:user});
 
     }else{
         return  res.status(404).json({status: 404, data: "not found"});
