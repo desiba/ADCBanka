@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec babel-node ./api/index.js",
-    "test": "set TEST_ENV=test && nyc --reporter=html --reporter=text mocha --require @babel/register ./api/test/*.js --watch",
+    "test": "set TEST_ENV=test && nyc --reporter=html --reporter=text mocha --require @babel/register ./api/test/*.js --exit",
     "clean": "mkdir build",
     "build-babel": "./node_modules/.bin/babel ./api -d ./build/ --ignore ./api/coverage",
     "build": "npm run build-babel",
