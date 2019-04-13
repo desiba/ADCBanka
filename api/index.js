@@ -7,6 +7,7 @@ import bodyParser from 'body-parser';
 
 import routes from './routes';
 
+
 import logger from 'morgan';
 import validator from 'express-validator';
 import customValidator from './middlewares/validators/custom-validator';

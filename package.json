@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec babel-node ./api/index.js",
-    "test": "set TEST_ENV=test && nyc --reporter=html --reporter=text mocha --require @babel/register ./api/test/*.js --exit"
+    "test": "set TEST_ENV=test && nyc --reporter=html --reporter=text mocha --require @babel/register ./api/test/*.js --exit",
+    "clean": "mkdir build",
+    "build-babel": "./node_modules/.bin/babel ./api -d ./build/ --ignore ./api/coverage",
+    "build": "npm run build-babel",
+    "start": "node ./build/index.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +40,7 @@
     "express-jwt": "^5.3.1",
     "express-validator": "^5.3.1",
     "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
     "node-uuid": "^1.4.8",
     "nyc": "^13.3.0"
   },
@@ -57,7 +62,6 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "mocha": "^6.1.2",
-    "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
     "supertest": "^4.0.2"
   }
