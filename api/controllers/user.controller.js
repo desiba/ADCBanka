@@ -50,11 +50,11 @@ class UserController {
   }
 
   static userSignIn(req, res){
-    const email = req.body.email;
+    const {email} = req.body;
     const user = UserService.userSignIn(email);
     
     if(user != undefined){
-        return  res.status(200).json({status: 200, data: user});
+        return  res.status(200).json({status: 200, data:user});
 
     }else{
         return  res.status(404).json({status: 404, data: "not found"});
@@ -129,9 +129,9 @@ class UserController {
     //console.log(foundAccount.status);
 
     if(foundAccount.status){
-      return res.status(200).json({status: 'success', data: foundAccount});
+      return res.status(200).json({status: 200, data: foundAccount});
     }else{
-      return res.status(404).json({status: 'not found'});
+      return res.status(404).json({status: 404});
     }
 
   }
@@ -139,10 +139,7 @@ class UserController {
   static createAccount(req, res){
       const newAccount = req.body;
       const createdAccount = UserService.createAccount(newAccount);
-      return res.status(200).json({
-        status: 'success',
-        data: createdAccount
-    })
+      return res.status(200).json({status: 200, data: createdAccount})
   }
   
 

@@ -9,7 +9,9 @@
     "clean": "mkdir build",
     "build-babel": "./node_modules/.bin/babel ./api -d ./build/ --ignore ./api/coverage",
     "build": "npm run build-babel",
-    "start": "node ./build/index.js"
+    "start": "node ./build/index.js",
+    "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -42,7 +44,8 @@
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.9.1",
     "node-uuid": "^1.4.8",
-    "nyc": "^13.3.0"
+    "path": "^0.12.7",
+    "swagger-jsdoc": "^3.2.8"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
@@ -62,7 +65,10 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "mocha": "^6.1.2",
+    "mocha-lcov-reporter": "^1.3.0",
     "nodemon": "^1.18.10",
-    "supertest": "^4.0.2"
+    "nyc": "^13.3.0",
+    "supertest": "^4.0.2",
+    "swagger-ui-express": "^4.0.2"
   }
 }

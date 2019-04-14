@@ -8,18 +8,20 @@ import permission from '../../../middlewares/permissions/user.permission';
 
 const router = express.Router();
 
+
+
+  
 router.post('/auth/signup',validator.signup,UserController.userSignUp);
-
-router.get('/users/:userId',jwtVerify.verifyToken, UserController.getSingleUser);
+router.post('/auth/signin', UserController.userSignIn);
 router.get('/users/',jwtVerify.verifyToken,permission.canView, UserController.getAllUsers);
-router.post('/account/',jwtVerify.verifyToken, UserController.createAccount);
-router.get('/account/:id',jwtVerify.verifyToken, UserController.fetchAccountById);
-router.get('/transaction/:id',jwtVerify.verifyToken, UserController.getTransactionHistory);
-router.post('/transaction/:accountnumber/debit',jwtVerify.verifyToken, UserController.debitAccount);
-router.post('/transaction/:accountnumber/credit',jwtVerify.verifyToken, UserController.creditAccount);
-router.delete('/:accountnumber',jwtVerify.verifyToken, UserController.deleteAccount);
-router.post('/auth/signin',validator.login, UserController.userSignIn);
+router.get('/users/:userId',jwtVerify.verifyToken, UserController.getSingleUser);
+router.post('/accounts/',jwtVerify.verifyToken, UserController.createAccount);
+router.get('/accounts/:id',jwtVerify.verifyToken, UserController.fetchAccountById);
 
+router.get('/transactions/:id',jwtVerify.verifyToken, UserController.getTransactionHistory);
+router.post('/transactions/:accountnumber/debit',jwtVerify.verifyToken, UserController.debitAccount);
+router.post('/transactions/:accountnumber/credit',jwtVerify.verifyToken, UserController.creditAccount);
+router.delete('/:accountnumber',jwtVerify.verifyToken, UserController.deleteAccount);
 router.patch('/account/:accountnumber',jwtVerify.verifyToken, UserController.activateAccount);
 
 

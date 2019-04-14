@@ -107,6 +107,7 @@ class  UserService {
            
         
         if(user != undefined){
+            
             const payload = {
                 id: user.id,
                 firstname: user.email,
@@ -116,16 +117,17 @@ class  UserService {
                 isAdmin: user.isAdmin
             };
 
+            
+
             const token = jwt.sign(payload, secretKey, {
                 expiresIn: 3600,
             });
-            const resp = {
-              code: 200,
-              message: 'User successfully loggedIn',
-              user: payload,
-              token: token,
-            }
-            return resp;
+
+            
+            const {password, ...payloadDetail} = payload;
+
+            return {token, ...payloadDetail}
+              
            
         }else{
           return "no user found";
