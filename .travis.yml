@@ -6,7 +6,7 @@ cache:
     - "node_modules"
 env:
   global:
-     -CC_TEST_REPORTER_ID=222380ea6a65d2b7f400995cadb2abfe6ce094fc39af23482b853600eb670c38
+     - CC_TEST_REPORTER_ID=222380ea6a65d2b7f400995cadb2abfe6ce094fc39af23482b853600eb670c38
      - NODE_ENV=test
 before_script:
   - yarn global add nyc
@@ -14,7 +14,7 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build     
 script:
-  -npm run coveralls
-  -npm run coverage
+  - npm run coveralls
+  - npm run coverage
 after_script: 
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
