@@ -16,6 +16,11 @@
 
 
 
+## Documentation.
+  
+  * Navigate to https://alcbanka.herokuapp.com/api-docs/ to test current endpoints with dummy data
+
+
 ## API Endpoints
 
 | METHOD | DESCRIPTION                             | ENDPOINTS                           |
