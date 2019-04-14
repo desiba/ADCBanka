@@ -213,12 +213,12 @@ function () {
 
       if (foundAccount.status) {
         return res.status(200).json({
-          status: 'success',
+          status: 200,
           data: foundAccount
         });
       } else {
         return res.status(404).json({
-          status: 'not found'
+          status: 404
         });
       }
     }
@@ -230,7 +230,7 @@ function () {
       var createdAccount = _user.default.createAccount(newAccount);
 
       return res.status(200).json({
-        status: 'success',
+        status: 200,
         data: createdAccount
       });
     }

@@ -1,4 +1,6 @@
+
 class User{
+
     constructor(){
         this.id = null,
         this.email = null,

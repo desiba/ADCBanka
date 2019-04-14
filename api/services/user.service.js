@@ -107,6 +107,7 @@ class  UserService {
            
         
         if(user != undefined){
+            
             const payload = {
                 id: user.id,
                 firstname: user.email,
@@ -125,13 +126,8 @@ class  UserService {
             
             const {password, ...payloadDetail} = payload;
 
-
-            const resp = {
-              message: 'User successfully loggedIn',
-              user: payloadDetail,
-              token: token,
-            }
-            return resp;
+            return {token, ...payloadDetail}
+              
            
         }else{
           return "no user found";

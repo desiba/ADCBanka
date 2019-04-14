@@ -20,15 +20,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var router = _express.default.Router();
 
 router.post('/auth/signup', _user2.default.signup, _user.default.userSignUp);
-router.get('/users/:userId', _auth.default.verifyToken, _user.default.getSingleUser);
+router.post('/auth/signin', _user.default.userSignIn);
 router.get('/users/', _auth.default.verifyToken, _user3.default.canView, _user.default.getAllUsers);
-router.post('/account/', _auth.default.verifyToken, _user.default.createAccount);
-router.get('/account/:id', _auth.default.verifyToken, _user.default.fetchAccountById);
-router.get('/transaction/:id', _auth.default.verifyToken, _user.default.getTransactionHistory);
-router.post('/transaction/:accountnumber/debit', _auth.default.verifyToken, _user.default.debitAccount);
-router.post('/transaction/:accountnumber/credit', _auth.default.verifyToken, _user.default.creditAccount);
+router.get('/users/:userId', _auth.default.verifyToken, _user.default.getSingleUser);
+router.post('/accounts/', _auth.default.verifyToken, _user.default.createAccount);
+router.get('/accounts/:id', _auth.default.verifyToken, _user.default.fetchAccountById);
+router.get('/transactions/:id', _auth.default.verifyToken, _user.default.getTransactionHistory);
+router.post('/transactions/:accountnumber/debit', _auth.default.verifyToken, _user.default.debitAccount);
+router.post('/transactions/:accountnumber/credit', _auth.default.verifyToken, _user.default.creditAccount);
 router.delete('/:accountnumber', _auth.default.verifyToken, _user.default.deleteAccount);
-router.post('/auth/signin', _user2.default.login, _user.default.userSignIn);
 router.patch('/account/:accountnumber', _auth.default.verifyToken, _user.default.activateAccount);
 var _default = router;
 exports.default = _default;

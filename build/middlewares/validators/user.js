@@ -26,7 +26,7 @@ Validator.signup = function (req, res, next) {
 
 Validator.login = function (req, res, next) {
   req.checkBody('email', 'please supply a valid email').notEmpty().isEmailV2();
-  req.checkBody('password', 'Please supply a valid password').isMinLen(3).isMaxLen(50);
+  req.checkBody('password', 'Please supply a valid password').notEmpty();
   req.asyncValidationErrors().then(next).catch(function (errors) {
     return res.status(400).json(_transformer.default.transformResponse(400, _transformer.default.transformExpressValidationErrors(errors), errors));
   });
