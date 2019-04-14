@@ -1,3 +1,10 @@
+[![Coverage Status](https://coveralls.io/repos/github/desiba/ADCBanka/badge.svg?branch=develop)](https://coveralls.io/github/desiba/ADCBanka?branch=develop)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/6bf298446b1a2120f4e0/maintainability)](https://codeclimate.com/github/desiba/ADCBanka/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6bf298446b1a2120f4e0/test_coverage)](https://codeclimate.com/github/desiba/ADCBanka/test_coverage)
+
+[![Build Status](https://travis-ci.com/desiba/ADCBanka.svg?branch=develop)](https://travis-ci.com/desiba/ADCBanka)
 # Banka App (ADC BOOTCAMP Banka App)
 
 
