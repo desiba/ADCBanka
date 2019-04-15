@@ -1,48 +1,79 @@
 * {
     box-sizing: border-box;
-  }
+    margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: rgba(128, 0, 0, 0.3);
+  width: 100%;
+}
+
 
 button{
   margin: 0;
 }
 
-button{
-  overflow: visible;
-}
-
-button{
-  text-transform: none;
-}
-
-button[type="button"]{
-  
-}
 
 label{
   display: inline-block;
   margin-bottom: 10px;
 }
 
+img{
+    position: relative;
+    width: 100%;
+}
+
+
+
+
+/*********************==============  Header ==================*****************************/
+
+header {
+  padding: 100px;
+  text-align: center;
+  background: #1abc9c;
+  color: #000;
+  background-image: url('../images/headerbg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+header .bank-con{
+  
+}
+header img{
+  width: 10%;
+}
+
+header .bank-names{
+  
+}
+
+header .bank-names p{
+  font-size: 30px;
+  color: red;
+}
+
+
+/*********************============== End Header ==================*****************************/
+
+
 .active{
   background-color: #e10000;
 }
 
-.col-md-6{
-  width: 40%;
-  padding-right: 15px;
-  padding-left: 15px; 
-}
 
 .form-group {
   margin-bottom: 1rem; 
 }
   
   
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-  }
-
+  
   .btn{
     display: inline-block;
     font-weight: 400;
@@ -68,17 +99,7 @@ label{
   
   
   
-  .header {
-    padding: 80px;
-    text-align: center;
-    background: #1abc9c;
-    color: #000;
-    background-image: url('../images/headerbg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    
-  }
+  
   
   .header h1 {
     font-size: 40px;
@@ -133,26 +154,66 @@ label{
     margin-right: -15px;
     margin-left: -15px; 
   }
-  
-  
-  .side {
+
+
+/*********************==============  Side bar style ==================*****************************/
+
+.side {
     -ms-flex: 20%; 
     flex: 20%;
-    background-color: #f1f1f1;
+    background-color: rgba(128, 0, 0, 0.3);
     padding: 20px;
+    
   }
+
+
+/*********************==============  end side bar style ==================*****************************/
+  
+  
+/******************** card css ***************/
+.cards{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+}
+
+.card{
+  flex: 0 1 calc(24% - 1em);
+
+}
+
+
+
+/******************** end card css ***************/
+
+
+.col {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 20%; }
+
+.col-8, .col-7, .col-4{
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+ }
+
   
   .main {   
     -ms-flex: 80%; 
     flex: 80%;
-    background-color: white;
     padding: 20px;
   }
   
-  .fakeimg {
-    background-color: #aaa;
+  .content-container {
+    background-color: rgba(128, 0, 0, 0.5);
     width: 100%;
-    padding: 20px;
+    padding: 10px;
+    border-radius: 5px;
   }
 
 /******** tabs styling ********/
@@ -161,11 +222,11 @@ label{
   flex-wrap: wrap;
   list-style: none;
   padding-left: 0;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .nav li{
-  width: 25%;
+  width: 33%;
   background-color: #800000;
   text-align: center;
   border-right: 2px solid #fff;
@@ -199,63 +260,68 @@ label{
 /******** table styling ***********/
 .table{
   border-collapse: collapse;
+  width: 100%;
+  background: transparent;
+  border-spacing: 0;
+  border: 1px solid #ddd;
 }
 
 .table td, .table th{
   background-color: #fff;
   padding: 5px;
+  border-top: 1px solid #dee2e6;
+  text-align: center
+  
 }
 
-.table-striped tbody tr:nth-of-type(odd){
-  background-color: rgba(0,0,0,0.05);
+.table tbody td{
+  font-size: 10px
+}
+
+.table thead th{
+  font-size: 16px;
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table .table-striped tbody tr:nth-child(even){
+  background-color: red;
 }
 
 .table-bordered th, .table-bordered td{
   border: 1px solid #dee2e6;
 }
 
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+
 .table-responsive{
   
 }
 
-/********* card styling **********/
-.cards{
-  display: flex;
-  flex-wrap: wrap;
-  
-}
 
-.card{
-  flex: 1 0 500px;
-  box-sizing: border-box;
-  margin: 1rem .25em;
-}
 
-.card-img-top{
-  
-}
-
-.card-body{
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  padding: 1.25rem;
-}
-
-.card-title{
-  margin-bottom: 0.75rem;
-}
-
-.card-text{
-  
-}
 
 
 /************ form css ******/
+
+
+
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+
+
+
 .form-control{
   height: 40px;
   background: #fff !important;
   color: #000000 !important;
-  font-size: 16px;
+  font-size: 15px;
   box-shadow: none;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 0px;
@@ -341,26 +407,95 @@ label{
   .footer {
     padding: 20px;
     text-align: center;
-    background: #e10000;
+    background-color: #800000;
   }
-  
-  @media screen and (max-width: 700px) {
-    .row {   
-      flex-direction: column;
+
+  /********* MEDIA QUERY *************/
+
+  /****  $size == phone only ******/
+  @media (max-width: 599px) {
+    .table{
+      overflow: scroll;
     }
-    
-    .card{
-      max-width: calc(50% - 1em);
-    }
-  }
-  
-  @media screen and (max-width: 400px) {
+
     .navbar a {
       float: none;
       width: 100%;
     }
+
+    .cards{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
     
     .card{
-      max-width: calc(25% - 1em);
+      flex: 1 2 calc(100% - 1em);
+      margin-bottom: 10px;
     }
+
+   }
+
+  
+  /****  $size == tablet-portrait-up ******/
+  @media (min-width: 600px) {
+    .card{
+      flex: 0 1 calc(35% - 1em);
+    }
+  
+   }
+
+  /***  $size == tablet-landscape-up ***/
+  @media (min-width: 900px) {
+
+    .card{
+      flex: 0 1 calc(33% - 1em);
+    }
+  
+
+   }
+
+  /** size == desktop-up **/
+  @media (min-width: 1200px) {
+    
+   .col-8 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 66.66667%;
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+    }
+    
+ .col-7 {-webkit-box-flex: 0;
+  -ms-flex: 0 0 58.33333%;
+  flex: 0 0 58.33333%;
+  max-width: 58.33333%; }
+
+    
+   .col-6 {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    
+    .col-4{
+       -webkit-box-flex: 0;
+       -ms-flex: 0 0 33.33333%;
+       flex: 0 0 33.33333%;
+       max-width: 33.33333%; 
+    }
+    
   }
+  /*  if $size == big-desktop-up */
+  @media (min-width: 1800px) {
+    .table tbody td{
+      font-size: 16px
+  }
+    
+  }
+
+
+
+ 
+  
+  

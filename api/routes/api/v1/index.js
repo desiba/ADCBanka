@@ -12,7 +12,7 @@ const swaggerDefinition = {
       version: '1.0.0',
       description: 'Api documentation for ADC Andela.',
     },
-    host: 'https://alcbanka.herokuapp.com',
+    host: 'https://alcbanka.herokuapp.com', //localhost:3000
     basePath: '/api/v1'
   };
 

@@ -12,24 +12,33 @@
 </head>
 <body>
 
-<div class="header">
-  <h1>EAZY BANKA</h1>
-  <p>A RELIABLE WAY TO BANK</p>
-</div>
+    <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="#" id="signinbtn">SignIn</a>
+        <a href="#" class="right">Contact</a>
+    </nav>
 
-<div class="navbar">
-  <a href="index.html" class="active">Home</a>
-  <a href="#" id="signinbtn">SignIn</a>
-  <a href="#" class="right">Contact</a>
-</div>
+    <header>
+        <div class="bank-con">
+            <img src="res/images/eazybanka.png">
+            <div class="bank-names">
+                <h1>EAZY BANKA</h1>
+                <p>A RELIABLE WAY TO BANK</p>
+            </div>
+        </div>
+    </header>
 
+
+
+
+<main>
 <div class="row">
   <div class="side">
     <h2>Banka User Name</h2>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div>
+    <div class="content-container" style="height:200px;">Image</div>
+    <div class="content-container" style="height:60px;">Image</div><br>
+    <div class="content-container" style="height:60px;">Image</div><br>
+    <div class="content-container" style="height:60px;">Image</div>
   </div>
   <div class="main">
     <h2>Accounts</h2>
@@ -42,12 +51,14 @@
           <thead>
               <tr>
                   <th width="1%">#</th>
-                  <td width="19%">Account Name</td>
+                  <th width="19%">Account Name</th>
                   <th width="20%">Account Number</th>
-                  <th width="10%">Created Date</th>
-                  <th width="10%">Type</th>
-                  <th width="10%">Status</th>
-                  <th width="20%">Balance</th>
+                  <th width="20%">Created Date</th>
+                  <span class="hidden-table">
+                    <th width="10%">Type</th>
+                    <th width="10%">Status</th>
+                    <th width="10%">Balance</th>
+                  </span>
 
                   <th width="10%"></th>
               </tr>
@@ -105,11 +116,10 @@
     <div class="tab-content">
         <div id="transact" class="tab-pane fade">
             <h3>Transaction</h3>
-            <div class="row">
-                <div class="col-md-6 login-form-1">
-                    <h3>Create User</h3>
+                <h3>Create User</h3>
                     <form>
-                        <div class="form-group">
+                        <div class="row">
+                        <div >
                             <input type="text" class="form-control" placeholder="Email" value="" />
                         </div>
                         <div class="form-group">
@@ -130,46 +140,46 @@
                         <div class="form-group">
                             <input type="submit" class="btnSubmit" value="Send" />
                         </div>
-                        
+                    </div>
                     </form>
-                </div>
+               
             </div>
         </div>
         <div id="createaccount" class="tab-pane fade">
             <h3>Create account</h3>
             <div class="row">
-              <div class="col-md-6 login-form-1">
+                <div class="col-md-6">
                   <h3>Create User</h3>
-                  <form>
-                      <div class="form-group">
-                          <input type="text" class="form-control" placeholder="account number" value="" />
-                      </div>
-                      <div class="form-group">
-                        <select class="form-control">
-                          <option>Jude Paul</option>
-                          <option>Femi Adeola</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                      <select class="form-control">
-                        <option>saving</option>
-                        <option>current</option>
-                      </select>
-                  </div>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="account number" value="" />
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option>Jude Paul</option>
+                                <option>Femi Adeola</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option>saving</option>
+                                <option>current</option>
+                            </select>
+                        </div>
                       
-                      <div class="form-group">
+                        <div class="form-group">
                           <select class="form-control">
                             <option>client</option>
                             <option>staff</option>
                           </select>
-                      </div>
+                        </div>
                      
-                      <div class="form-group">
+                        <div class="form-group">
                           <input type="submit" class="btnSubmit" value="Create Account" />
-                      </div>
+                        </div>
                       
-                  </form>
-              </div>
+                    </form>
+                </div>
           </div>
         </div>
         <div id="menu2" class="tab-pane fade">
@@ -190,10 +200,12 @@
   </div>
 
 </div>
-
-<div class="footer">
-  <h2>Footer</h2>
-</div>
+</main>
+<footer>
+    <div class="footer">
+    <h2>Footer</h2>
+    </div>
+</footer>
 
 </body>
 
