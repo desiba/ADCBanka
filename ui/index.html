@@ -10,85 +10,120 @@
 </head>
 <body>
 
-<div class="header">
-  <h1>EAZY BANKA</h1>
-  <p>A RELIABLE WAY TO BANK</p>
-</div>
+  <nav class="navbar">
+      <a href="#" class="active">Home</a>
+      <a href="user.login.html">SignIn</a>
+      <a href="#">SignUp</a>
+      <a href="admin.page.html">Admin</a>
+      <a href="user.profile.html">User</a>
+      <a href="staff.page.html">Staff</a>
+      <a href="#" class="right">Contact</a>
+  </nav>
 
-<div class="navbar">
-  <a href="#" class="active">Home</a>
-  <a href="user.login.html">SignIn</a>
-  <a href="#">SignUp</a>
-  <a href="admin.page.html">Admin</a>
-  <a href="user.profile.html">User</a>
-  <a href="staff.page.html">Staff</a>
-
-  <a href="#" class="right">Contact</a>
-</div>
-
-<div class="row">
-  <div class="side">
-    <h2>About Easy Banka</h2>
-    <h5>Photo of me:</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    <h3>More Text</h3>
-    <p>Lorem ipsum dolor sit ame.</p>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div>
-  </div>
-  <div class="main">
-    <h2>Open Account</h2>
-    <h5>Account Options, Jan 7, 2019</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Account Opening Options</p>
-    <p>Customers have the choice of opening different options of account types like savings and current account which can be linked to just an account number</p>
-    <br>
-    <h2>Soft Loan</h2>
-    <h5>Soft Loan.. Loan without interest, Feb 2, 2019</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p></p>
-  
-
-    <div class="cards">
-      <div class="card">
-        <img class="card-img-top" src="res/images/bank.jpg">
-        <div class="card-body">
-          <h5 class="card-title">Business Solution</h5>
-          <p class="card-text"></p>
-        </div>
+  <header>
+    <div class="bank-con">
+      <img src="res/images/eazybanka.png">
+      <div class="bank-names">
+        <h1>EAZY BANKA</h1>
+        <p>A RELIABLE WAY TO BANK</p>
       </div>
-      <div class="card">
-        <img class="card-img-top" src="res/images/bank.jpg">
-        <div class="card-body">
-          <h5 class="card-title">Soft Loan</h5>
-          <p class="card-text"></p>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="res/images/bank.jpg">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
-        </div>
-      </div>
-    
     </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="row">
+            <div class="col-4">
+                <div class="content-container">
+                  Image
+                </div>
+
+            </div>
+            <div class="col-8">
+                <div class="content-container">
+                    <div class="tasks-tabs">
+                        <ul class="nav nav-pills nav-justified">
+                            <li class="active"><a href="javascript:;" onclick="openCity(event, 'transact')">Transaction</a></li>
+                            <li><a href="javascript:;" onclick="openCity(event, 'createaccount')">Create Account</a></li>
+                            
+                            <li><a href="javascript:;" onclick="openCity(event, 'settings')">Settings</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="transact" class="tab-pane fade">
+                                <h3>Transaction</h3>
+
+                                <form>
+                                    <div class="row">
+                                      <div class="col-7">
+                                        <input type="text" class="form-control" placeholder="City">
+                                      </div>
+                                      <div class="col">
+                                        <input type="text" class="form-control" placeholder="State">
+                                      </div>
+                                      <div class="col">
+                                        <input type="text" class="form-control" placeholder="Zip">
+                                      </div>
+                                    </div>
+                                  </form>
+
+
+                                    
+                            </div>
+                            </div>
+                            <div id="createaccount" class="tab-pane fade">
+                                <h3>Create account</h3>
+                                  
+                            </div>
+                            </div>
+                            
+                            <div id="settings" class="tab-pane fade">
+                                <h3>Menu 2</h3>
+                                <p>Some content in menu 2.</p>
+                            </div>
+                        </div>
+                      </div>
+
+                </div>
+
+            </div>
+       </div>
+      </div>
+  </section>
 
 
 
+<main>
 
+      
+  
+  <div class="row">
 
+      
     
+    
+    <div class="main">
+      
+        <section class="cards">
+          <article class="card">
+              <div class="content-container" style="height:60px;">Image</div>
+          </article>
+          <article class="card">
+              <div class="content-container" style="height:60px;">Image</div>
+          </article>
+          <article class="card">
+              <div class="content-container" style="height:60px;">Image</div>
+          </article>
+        </section>
+        
+    </div>
   </div>
+</main>
 
-</div>
-
-<div class="footer">
-  <h2>Footer</h2>
-</div>
+<footer>
+  <div class="footer">
+    <h2>Footer</h2>
+  </div>
+</footer>
 
 </body>
 
