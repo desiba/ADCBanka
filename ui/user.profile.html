@@ -11,137 +11,233 @@
     </head>
     <body>
 
-        <div class="header">
-            <h1>EAZY BANKA</h1>
-            <p>A RELIABLE WAY TO BANK</p>
-        </div>
-
-        <div class="navbar">
+        <nav class="navbar">
             <a href="index.html" class="active">Home</a>
-            <a href="user.login.html" id="signinbtn">SignIn</a>
-            <a href="#">SignUp</a>
+            <a href="#" id="signinbtn">SignIn</a>
             <a href="#" class="right">Contact</a>
-        </div>
-
-        <div class="row">
-            <div class="side">
-                <h2>Banka User Name</h2>
-                <div class="fakeimg" style="height:200px;">Image</div>
-                <div class="fakeimg" style="height:60px;">Image</div><br>
-                <div class="fakeimg" style="height:60px;">Image</div><br>
-                <div class="fakeimg" style="height:60px;">Image</div>
+        </nav>
+            
+        <header>
+            <div class="bank-con">
+                <img src="res/images/eazybanka.png">
+                <div class="bank-names">
+                    <h1>EAZY BANKA</h1>
+                    <p>A RELIABLE WAY TO BANK</p>
+                </div>
             </div>
-            <div class="main">
-                <h2>Open Account</h2>
-
-                <div class="transaction-history">
-                    <div>
-                        <input type="text" placeholder="search transaction history by date">
+        </header>
+        <main>
+                <div class="row">
+                  <div class="side">
+                    <h2>Banka User Name</h2>
+                    <div class="content-container">
+                      <img src="res/images/profile-img-placeholder.jpeg">
                     </div>
-                    <table class="table table-bordered table-striped table-responsive">
-                        <thead>
-                            <tr>
+                    
+                  </div>
+                  <div class="main">
+                    <h2>Transaction History</h2>
+                    
+                    <div class="transaction-history">
+                      <div>
+                          <input type="text" placeholder="search transaction history by date">
+                      </div>
+                      <table class="table table-bordered table-striped table-responsive">
+                          <thead>
+                              <tr>
                                 <th width="1%">#</th>
-                                <td width="15%">Date</td>
-                                <th width="10%">Time</th>
-                                <th width="10%">Type</th>
-                                <th width="10%">Amount</th>
-                                <th width="10%">Balance</th>
-                                <th width="20%">Description</th>
-
-                                <th width="24%"></th>
-                            </tr>
-                        </thead>
-                            <tbody>   
-                                <tr>
-                                    <td>1</td>
-                                    <td>Wed-02/12/2018</td>
-                                    <td>2:30PM</td>
-                                    <td>Debit</td>
-                                    <td>300</td>
-                                    <td>500</td>
-                                    <td>first term school fees</td>
-                                    <td>
-                                        <button><i class="fa fa-eye"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Fri-12/10/2018</td>
-                                    <td>3:45PM</td>
-                                    <td>Credit</td>
-                                    <td>250</td>
-                                    <td>550</td>
-                                    <td>April Salary for 2018</td>
-                                    <td>
-                                        <button><i class="fa fa-eye"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Fri-12/10/2018</td>
-                                    <td>3:45PM</td>
-                                    <td>Credit</td>
-                                    <td>250</td>
-                                    <td>550</td>
-                                    <td>April Salary for 2018</td>
-                                    <td>
-                                        <button><i class="fa fa-eye"></i></button>
-                                    </td>
-                                </tr>
-                        </tbody>            
-                    </table>
-                </div>
-                <div class="tasks-tabs">
-                    <ul class="nav nav-pills nav-justified">
-                        <li class="active"><a href="javascript:;" onclick="openCity(event, 'transact')">Transaction</a></li>
-                        <li><a href="javascript:;" onclick="openCity(event, 'createaccount')">Create Account</a></li>
-                        <li><a href="javascript:;" ></a></li>
-                        <li><a href="javascript:;" onclick="openCity(event, 'settings')">Settings</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="transact" class="tab-pane fade">
-                            <h3>Transaction</h3>
-                            <div class="row">
-                                <div class="col-md-6 login-form-1">
-                                    <h3>User SignUp</h3>
-                                    <form>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="your account number" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="recipient account number" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="description" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="amount" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="submit" class="btnSubmit" value="Send" />
-                                        </div>
+                                <th width="19%">Account Number</th>
+                                <th width="19%">B-Number</th>
+                                <th width="20%">Date</th>
+                                <span class="hidden-table">
+                                    <th width="15%">Type</th>
+                                    
+                                    <th width="15%">Balance</th>
+                                </span>
+                
+                                <th width="10%"></th>
+                              </tr>
+                          </thead>
+                              <tbody>   
+                                  <tr>
+                                      <td>1</td>
+                                      <td>5857438</td>
+                                      <td>837473764</td>
+                                      <td>Thur 3/12/2017</td>
+                                      <span class="hidden-table">
+                                        <td>Credit</td>
                                         
-                                    </form>
+                                        <td>500.45</td>
+                                      </span>
+                
+                                      <td>
+                                          <button><i class="fa fa-eye"></i></button>
+                                          <button><i class="fa fa-trash"></i></button>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                    <td>2</td>
+                                    <td>Femi Pedro</td>
+                                    <td>837473764</td>
+                                    <td>Thur 3/12/2017</td>
+                                    <span class="hidden-table">
+                                        <td>Savings</td>
+                                        
+                                        <td>500.45</td>
+                                    </span>
+                                    <td>
+                                        <button><i class="fa fa-eye"></i></button>
+                                        <button><i class="fa fa-trash"></i></button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>3</td>
+                                    <td>Femi Pedro</td>
+                                    <td>837473764</td>
+                                    <td>Thur 3/12/2017</td>
+                                    <span class="hidden-table">
+                                        <td>Savings</td>
+                                       
+                                        <td>500.45</td>
+                                    </span>
+                                    <td>
+                                        <button><i class="fa fa-eye"></i></button>
+                                        <button><i class="fa fa-trash"></i></button>
+                                    </td>
+                                  </tr>
+                          </tbody>            
+                      </table>
+                  </div>
+                
+                  <hr>
+                
+                  <hr>
+                
+                  
+                
+                  <div class="tasks-tabs">
+                        <ul class="nav nav-pills nav-justified">
+                            <li class="active"><a href="javascript:;" onclick="openCity(event, 'transact')">SignUp a User</a></li>
+                            <li><a href="javascript:;" onclick="openCity(event, 'createaccount')">Activate/Deactivate Users' Accounts</a></li>
+                
+                        </ul>
+                        <div class="tab-content">
+                            
+                            
+                          <div id="transact" class="tab-pane fade">
+                                <h3>SignUp</h3>
+                
+                            <form>
+                              <div class="row">
+                                <div class="col-4">
+                                  <input type="text" class="form-control" placeholder="Firstname">
                                 </div>
+                                <div class="col-4">
+                                  <input type="text" class="form-control" placeholder="Lastname">
+                                </div>
+                                <div class="col-4">
+                                  <input type="text" class="form-control" placeholder="Email Address">
+                                </div>
+                                <div class="col-12">
+                                  <input type="text" class="form-control" placeholder="Home Address">
+                                </div>
+                                
+                                <div class="col-4">
+                                  <select class="form-control">
+                                      <option>Admin</option>
+                                      <option>User</option>
+                                      <option>Staff</option>
+                                  </select>
+                                </div>
+                                <div class="col-4">
+                                    <input type="password" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="col-4">
+                                    <input type="password" class="form-control" placeholder="Confirm Password">
+                                </div>
+                              </div>
+                              <input type="submit" class="btn btn-lg" value="SignUp">
+                            </form>
+                
+                
+                                    
                             </div>
-                        </div>
-                        <div id="createaccount" class="tab-pane fade">
-                            <h3>Menu 1</h3>
-                            <p>Some content in menu 1.</p>
-                        </div>
-                        <div id="menu2" class="tab-pane fade">
-                            <h3>Menu 2</h3>
-                            <p>Some content in menu 2.</p>
-                        </div>
-                        <div id="settings" class="tab-pane fade">
-                            <h3>Menu 2</h3>
-                            <p>Some content in menu 2.</p>
+                            </div>
+                            <div id="createaccount" class="tab-pane fade">
+                                <h3>User SignIn</h3>
+                                <div class="row">
+                                        <div class="col-12">
+                                            <div class="content-container">
+                                <table class="table">
+                                    <thead>
+                                        <th width="5%">#</th>
+                                        <th width="20%">Account</th>
+                                        <th width="20%">Status</th>
+                                        <th width="20%">Balance</th>
+                                        <th width="15%">Date</th>
+                
+                                        <th width="20%">Action</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>5846483345</td>
+                                            <td><i class="fa fa-check" style="color: green;"></i></td>
+                                            <td>67.90</td>
+                                            <td>Today</td>
+                                            <td>
+                                            <button><i class="fa fa-times" style="color: red;"></i></button>
+                                            <button><i class="fa fa-eye" style="color: green;"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>5846483345</td>
+                                            <td><i class="fa fa-asterisk" style="color: red;"></i></td>
+                                            <td>67.90</td>
+                                            <td>Yesterday</td>
+                                            <td>
+                                            <button><i class="fa fa-check" style="color: green;"></i></button>
+                                            <button><i class="fa fa-eye" style="color: green;"></i></button>
+                                            </td>
+                                        </tr>
+                
+                                        <tr>
+                                            <td>3</td>
+                                            <td>5846483345</td>
+                                            <td><i class="fa fa-check" style="color: green;"></i></td>
+                                            <td>67.90</td>
+                                            <td>02/05/2019</td>
+                                            <td>
+                                            <button><i class="fa fa-times" style="color: red;"></i></button>
+                                            <button><i class="fa fa-eye" style="color: green;"></i></button>
+                                            </td>
+                
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                                </div>
+                                </div>
+                                
+                                  
+                            </div>
+                            </div>
+                            
+                            
                         </div>
                     </div>
+                
+                
+                
+                <hr>
+                  
+                
+                    
+                  </div>
+                
                 </div>
-            </div>
-        </div>
+                </main>
 
         <div class="footer">
             <h2>Footer</h2>

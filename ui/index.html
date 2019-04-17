@@ -10,14 +10,13 @@
 </head>
 <body>
 
-  <nav class="navbar">
+  <nav class="navbar" id="myNavbar">
       <a href="#" class="active">Home</a>
-      <a href="user.login.html">SignIn</a>
-      <a href="#">SignUp</a>
       <a href="admin.page.html">Admin</a>
       <a href="user.profile.html">User</a>
       <a href="staff.page.html">Staff</a>
-      <a href="#" class="right">Contact</a>
+      <a href="#">Contact</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="responsiveNav()">&#9776;</a>
   </nav>
 
   <header>
@@ -35,57 +34,142 @@
       <div class="row">
             <div class="col-4">
                 <div class="content-container">
-                  Image
+                  <img src="res/images/money.png">
                 </div>
 
             </div>
             <div class="col-8">
                 <div class="content-container">
+                    <div class="row">
+
+      
+    
+    
+                        <div class="main">
+                          
+                            <section class="cards">
+                              <article class="card">
+                                  <div class="content-container">
+                                     <div class="card-title">
+                                         <p>SOFT LOAN</p>
+                                     </div>
+                                     <div class="card-content">
+                                       <img src="res/images/Loan-Free-Download-PNG.png">
+                                        
+                                     </div>
+                                     <div class="card-footer">
+
+                                     </div>
+                                  </div>
+                              </article>
+                              <article class="card">
+                                  <div class="content-container">
+                                      <div class="card-title">
+                                          <p>SOFT LOAN</p>
+                                      </div>
+                                      <div class="card-content">
+                                        <img src="res/images/Loan-Free-Download-PNG.png">
+                                         
+                                      </div>
+                                      <div class="card-footer">
+ 
+                                      </div>
+                                  </div>
+                              </article>
+                              <article class="card">
+                                  <div class="content-container">
+                                      <div class="card-title">
+                                          <p>SOFT LOAN</p>
+                                      </div>
+                                      <div class="card-content">
+                                        <img src="res/images/Loan-Free-Download-PNG.png">
+                                         
+                                      </div>
+                                      <div class="card-footer">
+ 
+                                      </div>
+                                  </div>
+                              </article>
+                            </section>
+                            
+                        </div>
+                      </div>
                     <div class="tasks-tabs">
                         <ul class="nav nav-pills nav-justified">
-                            <li class="active"><a href="javascript:;" onclick="openCity(event, 'transact')">Transaction</a></li>
-                            <li><a href="javascript:;" onclick="openCity(event, 'createaccount')">Create Account</a></li>
+                            <li class="active"><a href="javascript:;" onclick="openCity(event, 'transact')">SignUp</a></li>
+                            <li><a href="javascript:;" onclick="openCity(event, 'createaccount')">SignIn</a></li>
                             
-                            <li><a href="javascript:;" onclick="openCity(event, 'settings')">Settings</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div id="transact" class="tab-pane fade">
-                                <h3>Transaction</h3>
+                          <div id="transact" class="tab-pane fade">
+                                <h3>SignUp</h3>
 
-                                <form>
-                                    <div class="row">
-                                      <div class="col-7">
-                                        <input type="text" class="form-control" placeholder="City">
-                                      </div>
-                                      <div class="col">
-                                        <input type="text" class="form-control" placeholder="State">
-                                      </div>
-                                      <div class="col">
-                                        <input type="text" class="form-control" placeholder="Zip">
-                                      </div>
-                                    </div>
-                                  </form>
+                            <form>
+                              <div class="row">
+                                <div class="col-4">
+                                  <input type="text" class="form-control" placeholder="Firstname">
+                                </div>
+                                <div class="col-4">
+                                  <input type="text" class="form-control" placeholder="Lastname">
+                                </div>
+                                <div class="col-4">
+                                  <input type="text" class="form-control" placeholder="Email Address">
+                                </div>
+                                <div class="col-12">
+                                  <input type="text" class="form-control" placeholder="Home Address">
+                                </div>
+                                <div class="col-6">
+                                  <input type="text" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="col-6">
+                                  <input type="text" class="form-control" placeholder="Confirm Password">
+                                </div>
+                                
+                              </div>
+                              <input type="submit" class="btn btn-lg" value="SignUp">
+                            </form>
 
 
                                     
                             </div>
                             </div>
                             <div id="createaccount" class="tab-pane fade">
-                                <h3>Create account</h3>
+                                <h3>User SignIn</h3>
+
+                                <form>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <input type="text" class="form-control" placeholder="Firstname">
+                                    </div>
+                                    <div class="col-12">
+                                      <input type="text" class="form-control" placeholder="Lastname">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="submit" class="btn btn-lg" value="SignIn">
+
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="button" class="btn btn-lg" value="Forgot Login">
+                                    </div>
+                                    
+                                    
+                                  </div>
+                                </form>
                                   
                             </div>
                             </div>
                             
-                            <div id="settings" class="tab-pane fade">
-                                <h3>Menu 2</h3>
-                                <p>Some content in menu 2.</p>
-                            </div>
+                            
                         </div>
                       </div>
 
                 </div>
 
             </div>
+
+            
+
+
        </div>
       </div>
   </section>
@@ -121,7 +205,7 @@
 
 <footer>
   <div class="footer">
-    <h2>Footer</h2>
+    <h2>Andela ADC Banka App</h2>
   </div>
 </footer>
 

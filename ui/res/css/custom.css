@@ -22,12 +22,15 @@ label{
 }
 
 img{
-    position: relative;
+    
     width: 100%;
 }
 
 
-
+.error{
+  display: none;
+  color: red;
+}
 
 /*********************==============  Header ==================*****************************/
 
@@ -86,6 +89,14 @@ header .bank-names p{
     
   }
 
+.btn-lg{
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+  width: 100%;
+}
+
   .form-control{
     display: block;
     width: 100%;
@@ -143,9 +154,13 @@ header .bank-names p{
     color: white;
   }
   
+  .navbar .icon {
+      display: none;
+  }
   
 
   .row {
+    margin: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -195,7 +210,8 @@ header .bank-names p{
   flex-grow: 1;
   max-width: 20%; }
 
-.col-8, .col-7, .col-4{
+.col-12, .col-8, .col-7, .col-6, .col-4{
+  margin-top: 10px;
   position: relative;
   width: 100%;
   padding-right: 15px;
@@ -207,14 +223,19 @@ header .bank-names p{
     -ms-flex: 80%; 
     flex: 80%;
     padding: 20px;
+    
   }
   
   .content-container {
+    margin-top: 10px;
+    display: block;
     background-color: rgba(128, 0, 0, 0.5);
     width: 100%;
     padding: 10px;
     border-radius: 5px;
   }
+
+ 
 
 /******** tabs styling ********/
 .nav{
@@ -226,7 +247,7 @@ header .bank-names p{
 }
 
 .nav li{
-  width: 33%;
+  width: 50%;
   background-color: #800000;
   text-align: center;
   border-right: 2px solid #fff;
@@ -275,7 +296,7 @@ header .bank-names p{
 }
 
 .table tbody td{
-  font-size: 10px
+  font-size: 15px
 }
 
 .table thead th{
@@ -433,6 +454,29 @@ header .bank-names p{
       flex: 1 2 calc(100% - 1em);
       margin-bottom: 10px;
     }
+    
+    
+    .navbar a.icon {
+      float: right;
+      display: block;
+    }
+    
+    
+    .navbar a:not(:first-child) {
+      display: none;
+    }
+    
+    .navbar.responsive .icon {
+      position: absolute;
+      right: 0;
+      bottom:0;
+    }
+    
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 
    }
 
@@ -442,6 +486,8 @@ header .bank-names p{
     .card{
       flex: 0 1 calc(35% - 1em);
     }
+    
+    
   
    }
 
@@ -457,6 +503,12 @@ header .bank-names p{
 
   /** size == desktop-up **/
   @media (min-width: 1200px) {
+    .col-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    }
     
    .col-8 {
     -webkit-box-flex: 0;
