@@ -1,8 +1,16 @@
 import express from 'express';
-import UserController  from '../../../controllers/user.controller';
+import UserControllerJsObject  from '../../../controllers/user.controller';
+import UserControllerDB from '../../../database/controllers/user.controller';
 import validator from '../../../middlewares/validators/user';
 import jwtVerify from '../../../middlewares/auth';
 import permission from '../../../middlewares/permissions/user.permission';
+import dotenv from 'dotenv';
+
+
+
+const UserController = process.env.TYPE == "db" ? UserControllerDB : UserControllerJsObject;
+
+
 
 
 

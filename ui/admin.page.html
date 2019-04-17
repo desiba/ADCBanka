@@ -29,6 +29,9 @@
     </header>
 
 
+    
+
+
 
 
 <main>
@@ -50,17 +53,17 @@
       <table class="table table-bordered table-striped table-responsive">
           <thead>
               <tr>
-                  <th width="1%">#</th>
-                  <th width="19%">Account Name</th>
-                  <th width="20%">Account Number</th>
-                  <th width="20%">Created Date</th>
-                  <span class="hidden-table">
+                <th width="1%">#</th>
+                <th width="19%">Account Name</th>
+                <th width="20%">Account Number</th>
+                <th width="20%">Created Date</th>
+                <span class="hidden-table">
                     <th width="10%">Type</th>
                     <th width="10%">Status</th>
                     <th width="10%">Balance</th>
-                  </span>
+                </span>
 
-                  <th width="10%"></th>
+                <th width="10%"></th>
               </tr>
           </thead>
               <tbody>   
@@ -69,11 +72,15 @@
                       <td>Femi Pedro</td>
                       <td>837473764</td>
                       <td>Thur 3/12/2017</td>
-                      <td>Savings</td>
-                      <td>active</td>
-                      <td>500.45</td>
+                      <span class="hidden-table">
+                        <td>Savings</td>
+                        <td>active</td>
+                        <td>500.45</td>
+                      </span>
+
                       <td>
                           <button><i class="fa fa-eye"></i></button>
+                          <button><i class="fa fa-trash"></i></button>
                       </td>
                   </tr>
                   <tr>
@@ -81,11 +88,14 @@
                     <td>Femi Pedro</td>
                     <td>837473764</td>
                     <td>Thur 3/12/2017</td>
-                    <td>Savings</td>
-                    <td>active</td>
-                    <td>500.45</td>
+                    <span class="hidden-table">
+                        <td>Savings</td>
+                        <td>active</td>
+                        <td>500.45</td>
+                    </span>
                     <td>
                         <button><i class="fa fa-eye"></i></button>
+                        <button><i class="fa fa-trash"></i></button>
                     </td>
                   </tr>
                   <tr>
@@ -93,11 +103,14 @@
                     <td>Femi Pedro</td>
                     <td>837473764</td>
                     <td>Thur 3/12/2017</td>
-                    <td>Savings</td>
-                    <td>active</td>
-                    <td>500.45</td>
+                    <span class="hidden-table">
+                        <td>Savings</td>
+                        <td>active</td>
+                        <td>500.45</td>
+                    </span>
                     <td>
                         <button><i class="fa fa-eye"></i></button>
+                        <button><i class="fa fa-trash"></i></button>
                     </td>
                   </tr>
           </tbody>            
@@ -106,92 +119,197 @@
 
   <hr>
 
+  <hr>
+
+  <div class="transaction-history">
+      <P>Transaction</P>
+        <div>
+            <input type="text" placeholder="search transaction history by date">
+        </div>
+        <table class="table table-bordered table-striped table-responsive">
+            <thead>
+                <tr>
+                  <th width="1%">#</th>
+                  <th width="19%">Initiated Account</th>
+                  <th width="20%">Recieving Account</th>
+                  <th width="20%">Cashier Id</th>
+                  <span class="hidden-table">
+                      <th width="10%">Type</th>
+                      <th width="10%">Amount</th>
+                      <th width="10%">Current Balance</th>
+                  </span>
+  
+                  <th width="10%"></th>
+                </tr>
+            </thead>
+                <tbody>   
+                    <tr>
+                        <td>1</td>
+                        <td>58573857</td>
+                        <td>837473764</td>
+                        <td>4736482</td>
+                        <span class="hidden-table">
+                          <td>Credit</td>
+                          <td>60.67</td>
+                          <td>500.45</td>
+                        </span>
+  
+                        <td>
+                            <button><i class="fa fa-plus" style="color: green;"></i></button>
+                            <button><i class="fa fa-times" style="color: blue;"></i></button>
+      
+                        </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>58573857</td>
+                        <td>837473764</td>
+                        <td>4736482</td>
+                        <span class="hidden-table">
+                          <td>Credit</td>
+                          <td>60.67</td>
+                          <td>500.45</td>
+                        </span>
+                      <td>
+                          <button><i class="fa fa-plus" style="color: green;"></i></button>
+                          <button><i class="fa fa-times" style="color: blue;"></i></button>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>58573857</td>
+                        <td>837473764</td>
+                        <td>4736482</td>
+                        <span class="hidden-table">
+                          <td>Debit</td>
+                          <td>60.67</td>
+                          <td>500.45</td>
+                        </span>
+                      <td>
+                          <button><i class="fa fa-minus" style="color: red;"></i></button>
+                          <button><i class="fa fa-times" style="color: blue;"></i></button>
+
+                      </td>
+                    </tr>
+            </tbody>            
+        </table>
+    </div>
+
   <div class="tasks-tabs">
-    <ul class="nav nav-pills nav-justified">
-        <li class="active"><a href="javascript:;" onclick="openCity(event, 'transact')">Transaction</a></li>
-        <li><a href="javascript:;" onclick="openCity(event, 'createaccount')">Create Account</a></li>
-        <li><a href="javascript:;" ></a></li>
-        <li><a href="javascript:;" onclick="openCity(event, 'settings')">Settings</a></li>
-    </ul>
-    <div class="tab-content">
-        <div id="transact" class="tab-pane fade">
-            <h3>Transaction</h3>
-                <h3>Create User</h3>
-                    <form>
-                        <div class="row">
-                        <div >
-                            <input type="text" class="form-control" placeholder="Email" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="firstname" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="lastname" value="" />
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control">
-                              <option>client</option>
-                              <option>staff</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="checkbox"/>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Send" />
-                        </div>
-                    </div>
-                    </form>
-               
-            </div>
-        </div>
-        <div id="createaccount" class="tab-pane fade">
-            <h3>Create account</h3>
-            <div class="row">
-                <div class="col-md-6">
-                  <h3>Create User</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="account number" value="" />
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control">
-                                <option>Jude Paul</option>
-                                <option>Femi Adeola</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control">
-                                <option>saving</option>
-                                <option>current</option>
-                            </select>
-                        </div>
-                      
-                        <div class="form-group">
-                          <select class="form-control">
-                            <option>client</option>
-                            <option>staff</option>
-                          </select>
-                        </div>
-                     
-                        <div class="form-group">
-                          <input type="submit" class="btnSubmit" value="Create Account" />
-                        </div>
-                      
-                    </form>
+        <ul class="nav nav-pills nav-justified">
+            <li class="active"><a href="javascript:;" onclick="openCity(event, 'transact')">SignUp a User</a></li>
+            <li><a href="javascript:;" onclick="openCity(event, 'createaccount')">Activate/Deactivate Users' Accounts</a></li>
+
+        </ul>
+        <div class="tab-content">
+            
+            
+          <div id="transact" class="tab-pane fade">
+                <h3>SignUp</h3>
+
+            <form>
+              <div class="row">
+                <div class="col-4">
+                  <input type="text" class="form-control" placeholder="Firstname">
                 </div>
-          </div>
-        </div>
-        <div id="menu2" class="tab-pane fade">
-            <h3>Menu 2</h3>
-            <p>Some content in menu 2.</p>
-        </div>
-        <div id="settings" class="tab-pane fade">
-            <h3>Menu 2</h3>
-            <p>Some content in menu 2.</p>
+                <div class="col-4">
+                  <input type="text" class="form-control" placeholder="Lastname">
+                </div>
+                <div class="col-4">
+                  <input type="text" class="form-control" placeholder="Email Address">
+                </div>
+                <div class="col-12">
+                  <input type="text" class="form-control" placeholder="Home Address">
+                </div>
+                
+                <div class="col-4">
+                  <select class="form-control">
+                      <option>Admin</option>
+                      <option>User</option>
+                      <option>Staff</option>
+                  </select>
+                </div>
+                <div class="col-4">
+                    <input type="password" class="form-control" placeholder="Password">
+                </div>
+                <div class="col-4">
+                    <input type="password" class="form-control" placeholder="Confirm Password">
+                </div>
+              </div>
+              <input type="submit" class="btn btn-lg" value="SignUp">
+            </form>
+
+
+                    
+            </div>
+            </div>
+            <div id="createaccount" class="tab-pane fade">
+                <h3>User SignIn</h3>
+                <div class="row">
+                        <div class="col-12">
+                            <div class="content-container">
+                <table class="table">
+                    <thead>
+                        <th width="5%">#</th>
+                        <th width="20%">Account</th>
+                        <th width="20%">Status</th>
+                        <th width="20%">Balance</th>
+                        <th width="15%">Date</th>
+
+                        <th width="20%">Action</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>5846483345</td>
+                            <td><i class="fa fa-check" style="color: green;"></i></td>
+                            <td>67.90</td>
+                            <td>Today</td>
+                            <td>
+                            <button><i class="fa fa-times" style="color: red;"></i></button>
+                            <button><i class="fa fa-eye" style="color: green;"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>5846483345</td>
+                            <td><i class="fa fa-asterisk" style="color: red;"></i></td>
+                            <td>67.90</td>
+                            <td>Yesterday</td>
+                            <td>
+                            <button><i class="fa fa-check" style="color: green;"></i></button>
+                            <button><i class="fa fa-eye" style="color: green;"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>5846483345</td>
+                            <td><i class="fa fa-check" style="color: green;"></i></td>
+                            <td>67.90</td>
+                            <td>02/05/2019</td>
+                            <td>
+                            <button><i class="fa fa-times" style="color: red;"></i></button>
+                            <button><i class="fa fa-eye" style="color: green;"></i></button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                </div>
+                </div>
+                
+                  
+            </div>
+            </div>
+            
+            
         </div>
     </div>
-</div>
+
+
 
 <hr>
   
